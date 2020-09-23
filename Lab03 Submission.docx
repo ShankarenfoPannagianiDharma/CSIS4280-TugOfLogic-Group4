@@ -1,0 +1,22 @@
+Game:Tug of Logic
+  -Multiplayer Game
+  -Players: 1 Judge (Instructor) & many Debators (Students)
+  
+Abstract: 
+  A Tug-of-Logic game is a subjective game of debate, wherein debators must pick a side on selected CLAIM: For or Against. Debators then make STATEMENTS supporting their position or detracting the opposition. Each STATEMENT is argued/discussed upon in a single timed BOUT, which debators must live-vote on its truth value (TRUE/FALSE). The Judge can end this bout prematurely at any time. Once all statements have finished their BOUTS, a final vote is made on the CLAIM. After this, debators that have switched sides must now state their reasoning.
+  
+Features/Rationale:
+ as a Judge:
+    -HOST a game by making a CLAIM.
+    -observe BOUTS
+      -end them prematurely
+      -ask questions during discussions
+      -reword the statements to fit discussion
+ as a Debator:
+    -Pick initial sides on CLAIM (For/Against)
+    -Create STATEMENTS regarding CLAIM.
+    -During BOUTS, discuss/debate regarding a CLAIM's truth.
+    -vote on a STATEMENT's legitimacy
+    -switch sides between BOUTS
+    -vote on CLAIM's legitimacy at final round
+    -cite their reasoning during closing
