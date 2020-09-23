@@ -1,0 +1,44 @@
+First Screen:
+Two buttons [Join | Host]
+
+Host Game:					
+	-Username					
+	-Invite						
+	-Make CLAIM
+	
+Join Game:
+	-view visible games
+	-waiting room/lobby
+	
+Waiting Room:
+	-Number players
+	-see CLAIM
+	-players pick a side T/F
+	-Judge starts the game
+	
+Statement Build:
+	-submit ANY # of statements
+	
+Hub:
+	-view all statements
+	-timed 
+	-can switch sides							=> key-value pair: ["playerName","statement#"]
+		/\															||
+		||  go back and forth										||
+		\/															||
+BOUT:																||
+	-Statement														||	
+	-Timed/Judge can end											||
+	-pick True/False												||
+	-just like chat													||
+																	||
+FINAL HUB:															||
+	-final voting													||
+		||															||
+		\/															\/
+Retrospective view												[GET LIST]
+	-each switch state why they change + track when they changed
+	-player submits their reason why
+	-more like a message board?
+	-finish() quit game.
+	

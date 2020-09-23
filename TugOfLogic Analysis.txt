@@ -1,0 +1,65 @@
+Tug of logic
+	-Multiplayer
+	-Subjective
+	-1 JUDGE
+	
+3 sides:
+	-(Many) Players
+		-For
+		-Against	
+	-(1) Judge	 ==> observer
+
+FLOW:
+1) Judge creates controversial CLAIM
+2) each player make set# of STATEMENTS on CLAIM
+3) For each STATEMENT, execute BOUT
+	-countdown from set time/Judge action
+	-any player discuss STATEMENT T/F value
+	-Judge can ask about statements
+	-live voting
+	-STATEMENT can be reworded
+	--Depending on vote, WITHDRAW/ESTABLISH
+4) After all statements voted, vote on CLAIM
+5) switches must cite STATEMENT that convinced switch
+
+---
+				  Start
+		  /					  \
+		 /				   	   \
+		/						\
+Host game as JUDGE		Play game as PLAYER
+		|						|
+	make CLAIM		-->		pick sides
+		|						|
+		 \				Make STATEMENTS on CLAIM
+		   \				  /
+					||
+		 __________BOUTS_____________
+		[	 discuss STATEMENT		 ] 
+		[	     Live VOTE			 ]
+		[     TIMEOUT/JUDGE END		 ]
+		[WITHDRAW/ESTABLISH STATEMENT]   		   
+		[____________________________]
+					||
+					Vote on CLAIM
+					||
+			SWITCHES cite STATEMENTS
+			
+---
+Features / Rationale
+Players:
+	-pick sides on CLAIM
+	-create STATEMENTS to support/detract CLAIM
+	-Discuss on STATEMENTS' truth values
+	-vote on STATEMENTS
+	-vote on final claim
+Judge:
+	-make CLAIM
+	-observe BOUTS
+	-Question STATEMENTS in BOUTS
+	-end BOUTS
+	-End GAME
+
+---
+Database:
+	
