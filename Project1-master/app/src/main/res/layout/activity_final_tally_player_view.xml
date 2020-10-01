@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/gradient"
+    tools:context=".FinalTallyPlayerViewActivity">
+
+    <TextView
+        android:id="@+id/finalTallyTitleTextView"
+        android:layout_width="226dp"
+        android:layout_height="45dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginStart="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginBottom="10dp"
+        android:gravity="center"
+        android:text="@string/finalTallyTitleStr"
+        android:textColor="@color/white"
+        android:textSize="24sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/mainClaimFinalTallyTextView"
+        android:layout_width="290dp"
+        android:layout_height="100dp"
+        android:layout_below="@+id/finalTallyTitleTextView"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginStart="68dp"
+        android:layout_marginLeft="68dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginEnd="68dp"
+        android:layout_marginRight="68dp"
+        android:layout_marginBottom="68dp"
+        android:background="@android:color/background_light"
+        android:text="@string/mainClaimStr"
+        android:textSize="18sp" />
+
+    <Button
+        android:id="@+id/againstClaimButton"
+        android:layout_width="120dp"
+        android:layout_height="50dp"
+        android:layout_below="@+id/mainClaimFinalTallyTextView"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="60dp"
+        android:layout_marginRight="57dp"
+        android:background="@drawable/rounded_button"
+        android:text="@string/againstBtnStr" />
+
+    <Button
+        android:id="@+id/forClaimButton"
+        android:layout_width="120dp"
+        android:layout_height="50dp"
+        android:layout_below="@+id/mainClaimFinalTallyTextView"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_marginStart="60dp"
+        android:layout_marginLeft="60dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/rounded_button"
+        android:text="@string/forBtnStr" />
+
+    <TextView
+        android:id="@+id/numberOfPlayersForTextView"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_below="@+id/againstClaimButton"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_marginStart="85dp"
+        android:layout_marginLeft="85dp"
+        android:layout_marginTop="80dp"
+        android:layout_marginEnd="114dp"
+        android:layout_marginRight="114dp"
+        android:layout_toStartOf="@+id/numberOfPlayersAgainstTextView"
+        android:layout_toLeftOf="@+id/numberOfPlayersAgainstTextView"
+        android:gravity="center"
+        android:text="@string/numberOfPlayersForStr"
+        android:textColor="@color/white"
+        android:textSize="30sp" />
+
+    <TextView
+        android:id="@+id/numberOfPlayersAgainstTextView"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_below="@+id/againstClaimButton"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginTop="80dp"
+        android:layout_marginEnd="85dp"
+        android:layout_marginRight="85dp"
+        android:gravity="center"
+        android:text="@string/numberOfPlayersAgainstStr"
+        android:textColor="@color/white"
+        android:textSize="30sp" />
+
+    <Button
+        android:id="@+id/switchButton"
+        android:layout_width="200dp"
+        android:layout_height="62dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="105dp"
+        android:layout_marginLeft="105dp"
+        android:layout_marginEnd="106dp"
+        android:layout_marginRight="106dp"
+        android:layout_marginBottom="130dp"
+        android:background="@drawable/rounded_edit_text"
+        android:gravity="center"
+        android:text="@string/switchBtnStr"
+        android:textColor="@color/black"
+        android:textSize="18sp" />
+
+</RelativeLayout>

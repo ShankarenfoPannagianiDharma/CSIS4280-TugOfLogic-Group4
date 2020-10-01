@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/gradient"
+    tools:context=".GameActivity">
+
+    <TextView
+        android:id="@+id/wait"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="WAITING PLAYERS"
+        android:textSize="25sp"
+        android:layout_marginTop="10dp"
+        android:textColor="@color/white"
+        android:layout_centerHorizontal="true"/>
+    <ListView
+        android:id="@+id/listWait"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/wait"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp"/>
+    <Button
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/add"
+        android:text="ADD"
+        android:textColor="@color/red"
+        android:background="@drawable/rounded_button"
+        android:layout_below="@+id/listWait"
+        android:layout_marginTop="20dp"
+        android:layout_centerHorizontal="true"/>
+    <Button
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:text="REMOVE"
+        android:id="@+id/remove"
+        android:textColor="@color/red"
+        android:background="@drawable/rounded_button"
+        android:layout_below="@+id/add"
+        android:layout_marginTop="20dp"
+        android:layout_centerHorizontal="true"/>
+    <Button
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:text="CLAIM"
+        android:id="@+id/cl"
+        android:textColor="@color/red"
+        android:background="@drawable/rounded_button"
+        android:layout_below="@+id/remove"
+        android:layout_marginTop="20dp"
+        android:layout_centerHorizontal="true"/>
+
+</RelativeLayout>

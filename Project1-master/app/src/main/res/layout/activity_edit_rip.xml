@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/gradient"
+    tools:context=".EditRipActivity">
+
+
+    <EditText
+        android:id="@+id/currentRipTextView"
+        android:layout_width="300dp"
+        android:layout_height="96dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginStart="59dp"
+        android:layout_marginLeft="59dp"
+        android:layout_marginTop="70dp"
+        android:layout_marginEnd="52dp"
+        android:layout_marginRight="52dp"
+        android:background="@color/white"
+        android:gravity="center"
+        android:hint="@string/editRipHintStr"
+        android:textColor="@color/black"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <Button
+        android:id="@+id/submitNewRipButton"
+        android:layout_width="140dp"
+        android:layout_height="60dp"
+        android:layout_below="@+id/currentRipTextView"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_marginStart="47dp"
+        android:layout_marginLeft="47dp"
+        android:layout_marginTop="119dp"
+        android:background="@drawable/rounded_edit_text"
+        android:text="@string/submitNewRipBtnStr"
+        android:textColor="@color/white"
+        android:textSize="18sp" />
+
+    <Button
+        android:id="@+id/againstClaimButton"
+        android:layout_width="140dp"
+        android:layout_height="60dp"
+        android:layout_below="@+id/submitNewRipButton"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginTop="181dp"
+        android:layout_marginEnd="47dp"
+        android:layout_marginRight="47dp"
+        android:background="@drawable/rounded_button"
+        android:text="@string/againstBtnStr"
+        android:textSize="18sp" />
+
+    <Button
+        android:id="@+id/withdrawRipButton"
+        android:layout_width="140dp"
+        android:layout_height="60dp"
+        android:layout_below="@+id/currentRipTextView"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginTop="119dp"
+        android:layout_marginEnd="47dp"
+        android:layout_marginRight="47dp"
+        android:background="@drawable/rounded_edit_text"
+        android:text="@string/withdrawRipBtnStr"
+        android:textColor="@color/white"
+        android:textSize="18sp" />
+
+    <Button
+        android:id="@+id/forClaimButton"
+        android:layout_width="140dp"
+        android:layout_height="60dp"
+        android:layout_below="@+id/withdrawRipButton"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_marginStart="47dp"
+        android:layout_marginLeft="47dp"
+        android:layout_marginTop="181dp"
+        android:background="@drawable/rounded_button"
+        android:text="@string/forBtnStr"
+        android:textSize="18sp" />
+
+
+</RelativeLayout>

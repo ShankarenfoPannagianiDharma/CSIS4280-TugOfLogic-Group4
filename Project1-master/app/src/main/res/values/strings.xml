@@ -1,0 +1,36 @@
+<resources>
+    <string name="app_name">Project1</string>
+    <string name="selected_item">Selected item:</string>
+    <string name="tugOfLogicTitleStr">TUG OF LOGIC</string>
+    <string name="mainClaimStr">Main Claim</string>
+    <string name="forBtnStr">FOR</string>
+    <string name="againstBtnStr">AGAINST</string>
+    <string name="numberOfPlayersForStr">0</string>
+    <string name="numberOfPlayersAgainstStr">0</string>
+    <string name="enterRipBtnStr">Click To Enter RiP</string>
+    <string name="editClaimBtnStr">Edit Claim</string>
+    <string name="endGameBtnStr">End Game</string>
+    <string name="nextActionAdminStr">Next</string>
+    <string name="prevActionAdminStr">Previous</string>
+    <string name="finalTallyTitleStr">FINAL TALLY</string>
+    <string name="switchBtnStr">Switch Choice</string>
+    <string name="initialTallyStr">INITIAL TALLY</string>
+    <string name="boutTimerStr">0:00</string>
+    <string name="currentRiPStr">Current Reason-in-Play (RiP)</string>
+    <string name="agreeRipBtnStr">AGREE</string>
+    <string name="disagreeRipBtnStr">DISAGREE</string>
+    <string name="dialogBoxTitleStr">DIALOGUE ROOM</string>
+    <string name="editRipBtnStr">EDIT RiP</string>
+    <string name="sendDialogChatBtnStr">Send</string>
+    <string name="setTimerStr">Set Timer</string>
+    <string name="editRipHintStr">Enter new Reason-in-Play</string>
+    <string name="submitNewRipBtnStr">Submit</string>
+    <string name="withdrawRipBtnStr">Withdraw</string>
+
+    <string-array name="Rooms">
+        <item>Room1</item>
+        <item>Room2</item>
+        <item>Room3</item>
+        <item>Room4</item>
+    </string-array>
+</resources>

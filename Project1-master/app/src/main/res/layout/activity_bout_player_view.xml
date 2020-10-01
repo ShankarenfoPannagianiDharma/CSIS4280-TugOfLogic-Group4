@@ -1,0 +1,240 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/gradient"
+    tools:context=".BoutPlayerViewActivity">
+
+    <TextView
+        android:id="@+id/mainClaimBoutPlayerTextView"
+        android:layout_width="250dp"
+        android:layout_height="70dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="36dp"
+        android:layout_marginLeft="36dp"
+        android:layout_marginTop="30dp"
+        android:background="@color/colorPrimary"
+        android:gravity="center"
+        android:text="@string/mainClaimStr"
+        android:textColor="@color/white"
+        android:textSize="24sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/boutTimerTextView"
+        android:layout_width="60dp"
+        android:layout_height="40dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginStart="26dp"
+        android:layout_marginLeft="26dp"
+        android:layout_marginTop="31dp"
+        android:layout_marginEnd="38dp"
+        android:layout_marginRight="38dp"
+        android:layout_toEndOf="@+id/mainClaimBoutPlayerTextView"
+        android:layout_toRightOf="@+id/mainClaimBoutPlayerTextView"
+        android:background="@color/white"
+        android:gravity="center"
+        android:text="@string/boutTimerStr"
+        android:textColor="@color/colorPrimary"
+        android:textSize="24sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/currentRipTextView"
+        android:layout_width="250dp"
+        android:layout_height="100dp"
+        android:layout_below="@+id/mainClaimBoutPlayerTextView"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginStart="80dp"
+        android:layout_marginLeft="80dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginEnd="81dp"
+        android:layout_marginRight="81dp"
+        android:background="@color/white"
+        android:gravity="center"
+        android:text="@string/currentRiPStr"
+        android:textColor="@color/black"
+        android:textSize="24sp" />
+
+
+    <Button
+        android:id="@+id/agreeRipButton"
+        android:layout_width="120dp"
+        android:layout_height="50dp"
+        android:layout_below="@+id/currentRipTextView"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginTop="40dp"
+        android:layout_marginEnd="60dp"
+        android:layout_marginRight="60dp"
+        android:background="@drawable/rounded_edit_text"
+        android:text="@string/disagreeRipBtnStr" />
+
+    <Button
+        android:id="@+id/disagreeRipButton"
+        android:layout_width="120dp"
+        android:layout_height="50dp"
+        android:layout_below="@+id/currentRipTextView"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_marginStart="60dp"
+        android:layout_marginLeft="60dp"
+        android:layout_marginTop="40dp"
+        android:background="@drawable/rounded_edit_text"
+        android:text="@string/agreeRipBtnStr" />
+
+    <TextView
+        android:id="@+id/numberOfPlayersForTextView"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_below="@+id/disagreeRipButton"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_marginStart="93dp"
+        android:layout_marginLeft="93dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="114dp"
+        android:layout_marginRight="114dp"
+        android:gravity="center"
+        android:text="@string/numberOfPlayersForStr"
+        android:textColor="@color/white"
+        android:textSize="30sp" />
+
+    <TextView
+        android:id="@+id/numberOfPlayersAgainstTextView"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_below="@+id/agreeRipButton"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginTop="9dp"
+        android:layout_marginEnd="94dp"
+        android:layout_marginRight="94dp"
+        android:gravity="center"
+        android:text="@string/numberOfPlayersAgainstStr"
+        android:textColor="@color/white"
+        android:textSize="30sp" />
+
+    <TextView
+        android:id="@+id/dialogRoomBoutPlayerTextView"
+        android:layout_width="300dp"
+        android:layout_height="240dp"
+        android:layout_below="@+id/disagreeRipButton"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="57dp"
+        android:layout_marginLeft="57dp"
+        android:layout_marginTop="75dp"
+        android:layout_marginEnd="53dp"
+        android:layout_marginRight="53dp"
+        android:layout_marginBottom="126dp"
+        android:background="@drawable/gradient" />
+
+    <TextView
+        android:id="@+id/diglogBoxTitleTextView"
+        android:layout_width="180dp"
+        android:layout_height="20dp"
+        android:layout_alignStart="@+id/dialogRoomBoutPlayerTextView"
+        android:layout_alignLeft="@+id/dialogRoomBoutPlayerTextView"
+        android:layout_alignTop="@+id/dialogRoomBoutPlayerTextView"
+        android:layout_alignEnd="@+id/dialogRoomBoutPlayerTextView"
+        android:layout_alignRight="@+id/dialogRoomBoutPlayerTextView"
+        android:layout_marginStart="58dp"
+        android:layout_marginLeft="58dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginEnd="63dp"
+        android:layout_marginRight="63dp"
+        android:gravity="center"
+        android:text="@string/dialogBoxTitleStr"
+        android:textColor="@color/white"
+        android:textSize="18sp"
+        android:textStyle="bold" />
+
+    <EditText
+        android:id="@+id/diologChatEditText"
+        android:layout_width="230dp"
+        android:layout_height="40dp"
+        android:layout_alignStart="@+id/dialogRoomBoutPlayerTextView"
+        android:layout_alignLeft="@+id/dialogRoomBoutPlayerTextView"
+        android:layout_alignEnd="@+id/dialogRoomBoutPlayerTextView"
+        android:layout_alignRight="@+id/dialogRoomBoutPlayerTextView"
+        android:layout_alignBottom="@+id/dialogRoomBoutPlayerTextView"
+        android:layout_marginStart="15dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginEnd="77dp"
+        android:layout_marginRight="77dp"
+        android:layout_marginBottom="13dp"
+        android:ems="10"
+        android:inputType="textPersonName" />
+
+    <Button
+        android:id="@+id/sendDialogChatButton"
+        android:layout_width="60dp"
+        android:layout_height="45dp"
+        android:layout_alignEnd="@+id/dialogRoomBoutPlayerTextView"
+        android:layout_alignRight="@+id/dialogRoomBoutPlayerTextView"
+        android:layout_alignBottom="@+id/dialogRoomBoutPlayerTextView"
+        android:layout_marginEnd="14dp"
+        android:layout_marginRight="14dp"
+        android:layout_marginBottom="11dp"
+        android:text="@string/sendDialogChatBtnStr" />
+
+    <Button
+        android:id="@+id/editRipBoutButton"
+        android:layout_width="100dp"
+        android:layout_height="50dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="40dp"
+        android:layout_marginLeft="40dp"
+        android:layout_marginBottom="30dp"
+        android:background="@color/colorPrimary"
+        android:text="@string/editRipBtnStr"
+        android:textColor="@color/white"
+        android:textSize="18sp" />
+
+    <Button
+        android:id="@+id/forClaimButton"
+        android:layout_width="100dp"
+        android:layout_height="50dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="5dp"
+        android:layout_marginRight="5dp"
+        android:layout_marginBottom="30dp"
+        android:layout_toStartOf="@+id/againstClaimButton"
+        android:layout_toLeftOf="@+id/againstClaimButton"
+        android:background="@color/colorPrimary"
+        android:text="@string/forBtnStr"
+        android:textColor="@color/white"
+        android:textSize="18sp" />
+
+    <Button
+        android:id="@+id/againstClaimButton"
+        android:layout_width="100dp"
+        android:layout_height="50dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="40dp"
+        android:layout_marginRight="40dp"
+        android:layout_marginBottom="30dp"
+        android:background="@color/colorPrimary"
+        android:text="@string/againstBtnStr"
+        android:textColor="@color/white"
+        android:textSize="18sp" />
+
+</RelativeLayout>

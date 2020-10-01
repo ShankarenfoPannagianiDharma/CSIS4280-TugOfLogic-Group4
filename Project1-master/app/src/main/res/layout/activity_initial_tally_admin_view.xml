@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:background="@drawable/gradient"
+    android:layout_height="match_parent"
+    tools:context=".InitialTallyAdminViewActivity">
+
+    <TextView
+        android:id="@+id/mainClaimAdminInitialTallyTextView"
+        android:layout_width="290dp"
+        android:layout_height="100dp"
+        android:layout_below="@+id/tugOfLogicTitleTextView"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginStart="61dp"
+        android:layout_marginLeft="61dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginEnd="59dp"
+        android:layout_marginRight="59dp"
+        android:background="@android:color/background_light"
+        android:text="@string/mainClaimStr"
+        android:textSize="18sp" />
+
+    <Button
+        android:id="@+id/endGameAdminButton"
+        android:layout_width="120dp"
+        android:layout_height="50dp"
+        android:layout_below="@+id/mainClaimAdminInitialTallyTextView"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginTop="40dp"
+        android:layout_marginEnd="49dp"
+        android:layout_marginRight="49dp"
+        android:background="@drawable/rounded_button"
+        android:text="@string/endGameBtnStr"
+        android:textColor="@android:color/holo_red_dark"
+        android:textStyle="bold" />
+
+    <Button
+        android:id="@+id/editClaimAdminButton"
+        android:layout_width="120dp"
+        android:layout_height="50dp"
+        android:layout_below="@+id/mainClaimAdminInitialTallyTextView"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_marginStart="49dp"
+        android:layout_marginLeft="49dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginEnd="49dp"
+        android:layout_marginRight="49dp"
+        android:background="@drawable/rounded_button"
+        android:text="@string/editClaimBtnStr" />
+
+    <TextView
+        android:id="@+id/againstTitleAdminextView"
+        android:layout_width="180dp"
+        android:layout_height="30dp"
+        android:layout_below="@+id/endGameAdminButton"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginStart="-2dp"
+        android:layout_marginLeft="-2dp"
+        android:layout_marginTop="50dp"
+        android:layout_marginEnd="29dp"
+        android:layout_marginRight="29dp"
+        android:layout_toEndOf="@+id/forTitleAdminTextView"
+        android:layout_toRightOf="@+id/forTitleAdminTextView"
+        android:gravity="center"
+        android:text="@string/againstBtnStr"
+        android:textColor="@color/white"
+        android:textSize="24sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/forTitleAdminTextView"
+        android:layout_width="180dp"
+        android:layout_height="30dp"
+        android:layout_below="@+id/editClaimAdminButton"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_marginStart="23dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="50dp"
+        android:gravity="center"
+        android:text="@string/forBtnStr"
+        android:textColor="@color/white"
+        android:textSize="24sp"
+        android:textStyle="bold" />
+
+    <ListView
+        android:id="@+id/forClaimPlayersListAdminTextView"
+        android:layout_width="180dp"
+        android:layout_height="300dp"
+        android:layout_below="@+id/forTitleAdminTextView"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_marginStart="24dp"
+        android:layout_marginLeft="24dp"
+        android:layout_marginTop="0dp" />
+
+    <ListView
+        android:id="@+id/againstClaimPlayersListAdminTextView"
+        android:layout_width="180dp"
+        android:layout_height="300dp"
+        android:layout_below="@+id/forTitleAdminTextView"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginTop="0dp"
+        android:layout_marginEnd="30dp"
+        android:layout_marginRight="30dp" />
+
+    <Button
+        android:id="@+id/nextActionAdminButton"
+        android:layout_width="120dp"
+        android:layout_height="50dp"
+        android:layout_below="@+id/againstClaimPlayersListAdminTextView"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="91dp"
+        android:layout_marginLeft="91dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginEnd="60dp"
+        android:layout_marginRight="60dp"
+        android:layout_marginBottom="41dp"
+        android:background="@drawable/rounded_button"
+        android:text="@string/nextActionAdminStr" />
+
+    <Button
+        android:id="@+id/previousActionAdminButton"
+        android:layout_width="120dp"
+        android:layout_height="50dp"
+        android:layout_below="@+id/forClaimPlayersListAdminTextView"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="60dp"
+        android:layout_marginLeft="60dp"
+        android:layout_marginTop="29dp"
+        android:layout_marginBottom="42dp"
+        android:background="@drawable/rounded_button"
+        android:text="@string/prevActionAdminStr" />
+
+</RelativeLayout>
