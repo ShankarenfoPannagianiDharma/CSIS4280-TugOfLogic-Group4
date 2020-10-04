@@ -5,31 +5,31 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/gradient"
-    tools:context=".Login">
+    tools:context=".HostNewGame">
 
     <TextView
         android:id="@+id/wel"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="WELCOME"
-        android:textSize="50sp"
+        android:layout_centerHorizontal="true"
         android:layout_marginTop="50dp"
+        android:text="HOSTING GAME"
         android:textColor="@color/white"
-        android:layout_centerHorizontal="true"/>
+        android:textSize="50sp" />
 
     <TextView
         android:id="@+id/des"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="To start this game all, You need to login first."
-        android:textColor="@color/white"
-       android:layout_centerHorizontal="true"
-        android:textSize="15sp"
         android:layout_below="@+id/wel"
-        android:layout_marginTop="20dp"/>
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:text="Enter Username and Main Claim"
+        android:textColor="@color/white"
+        android:textSize="15sp" />
 
     <EditText
-        android:id="@+id/email"
+        android:id="@+id/HostingNew_HostName_txt"
         android:layout_width="300dp"
         android:layout_height="40dp"
         android:background="@drawable/rounded_edit_text"
@@ -42,59 +42,31 @@
         android:textColorHint="#FFFFFF"
         android:layout_centerHorizontal="true"/>
 
-   <!-- <EditText
-        android:id="@+id/pass"
+    <EditText
+        android:id="@+id/HostingNew_MainClaim_txt"
         android:layout_width="300dp"
         android:layout_height="40dp"
         android:background="@drawable/rounded_edit_text"
-        android:text="123456789"
+        android:hint="Main Claim"
+        android:layout_below="@+id/HostingNew_HostName_txt"
+        android:layout_marginTop="40dp"
+        android:inputType="text"
         android:gravity="center"
-        android:textColor="#FFFFFF"
-        android:layout_below="@+id/email"
-        android:layout_marginTop="40dp"
-        android:inputType="textPassword"
+        android:textColor="@color/white"
         android:textColorHint="#FFFFFF"
-        android:layout_centerHorizontal="true"/>-->
-    <Button
-        android:id="@+id/loginBtn"
-        android:layout_width="300dp"
-        android:layout_height="40dp"
-        android:layout_below="@+id/email"
-        android:layout_marginTop="40dp"
-        android:text="Login"
-        android:textColor="@color/red"
-        android:background="@drawable/rounded_button"
         android:layout_centerHorizontal="true"/>
 
+    <Button
+        android:id="@+id/HostingNew_Confirm_btn"
+        android:layout_width="300dp"
+        android:layout_height="40dp"
+        android:layout_below="@+id/HostingNew_MainClaim_txt"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="40dp"
+        android:background="@drawable/rounded_button"
+        android:text="Confirm"
+        android:textColor="@color/red" />
 
-    <RelativeLayout
-        android:id="@+id/c1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/loginBtn"
-        android:layout_marginTop="20dp"
-        android:layout_centerHorizontal="true">
-        <TextView
-            android:id="@+id/link"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Sent an invitation"
-            android:textSize="20sp"
-            android:layout_marginTop="20dp"
-            android:layout_centerHorizontal="true"
-            android:textColor="@color/white" />
-        <TextView
-            android:id="@+id/claim"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Make a claim"
-            android:textSize="20sp"
-            android:layout_marginTop="10dp"
-            android:layout_below="@+id/link"
-            android:layout_centerHorizontal="true"
-            android:textColor="@color/white" />
-
-    </RelativeLayout>
 
     <!--<RelativeLayout
         android:layout_width="wrap_content"

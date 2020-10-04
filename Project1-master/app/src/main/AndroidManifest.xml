@@ -9,17 +9,22 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme.NoActionBar">
-        <activity android:name=".EditRipActivity"></activity>
-        <activity android:name=".BoutAdminViewActivity" />
-        <activity android:name=".BoutPlayerViewActivity" />
-        <activity android:name=".FinalTallyPlayerViewActivity" />
-        <activity android:name=".InitialTallyAdminViewActivity" />
-        <activity android:name=".InitialTallyPlayerViewActivity" />
-        <activity android:name=".StatementActivity" />
-        <activity android:name=".WaitActivity" />
-        <activity android:name=".ClaimActivity" />
-        <activity android:name=".GameActivity" />
-        <activity android:name=".Login" /> <!-- The below is for the splash screen and we need no action bar and the default theme -->
+        <activity android:name=".EndCiteActivity"></activity>
+        <activity
+            android:name=".ForOrAgainst"
+            android:label="@string/title_activity_for_or_against"
+            android:theme="@style/AppTheme.NoActionBar.NoActionBar" />
+        <activity android:name=".EditRipActivity" />
+        <activity android:name=".BoutJudgeActivity" />
+        <activity android:name=".BoutDebatorActivity" />
+        <activity android:name=".FinalMCVotingActivity" />
+        <activity android:name=".HubJudgeActivity" />
+        <activity android:name=".HubActivity" />
+        <activity android:name=".CreateStatementActivity" />
+        <activity android:name=".SessionJoinListActivity" />
+        <activity android:name=".InitialStatementsActivity" />
+        <activity android:name=".LobbyActivity" />
+        <activity android:name=".HostNewGame" /> <!-- The below is for the splash screen and we need no action bar and the default theme -->
         <activity
             android:name=".SplashActivity"
             android:theme="@style/AppTheme.NoActionBar">
