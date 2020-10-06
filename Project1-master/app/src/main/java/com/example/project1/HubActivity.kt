@@ -1,5 +1,7 @@
 package com.example.project1
 
+//  Contributors: Kaur, John, Shanka
+
 /*  This activity acts as a hub for DEBATORS/PLAYERS. They are able to see all statements & their status.
     They can switch sides on the mainclaim here, at any time.
     Further functions can be: a drawer for group chatting, add new/delete RiPs (by vote).
@@ -76,7 +78,7 @@ class HubActivity : AppCompatActivity() {
             val db = DatabaseClasses.AppDatabase.getDB(baseContext)
             //get debator object to update into DB
             val debator = db.debatorDAO().findByName(prefs.getString(getString(R.string.PrefKeyPlayerName), "ERROR!NONAME")!!)
-            runOnUiThread { hub_player_status.text = if (debator.position) { "For" } else { "Against" } }
+            runOnUiThread { hub_player_status.text = if (debator.position) { "You agree" } else { "You disagree" } }
         }
 
         //switch button function

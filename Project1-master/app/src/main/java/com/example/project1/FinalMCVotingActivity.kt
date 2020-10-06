@@ -1,5 +1,7 @@
 package com.example.project1
 
+//  Contributors: John, Kaur, Shanka
+
 /*  This is the final voting activity- for DEBATORS to VOTE on the MAIN CLAIM.
     DEBATORS can either vote yes or no. Their initial voting position is based on their stance initially.
     timer counts down to game end, then game finishes: proceed to results & citation
@@ -146,18 +148,18 @@ class FinalMCVotingActivity : AppCompatActivity() {
 
     //make the UI updated to ensure the debator's position
     private fun uiDebatorPosUpdate(){
-        var position = false
         GlobalScope.launch {
             val db = DatabaseClasses.AppDatabase.getDB(baseContext)
             val prefs = getSharedPreferences(getString(R.string.PrefName), Context.MODE_PRIVATE)
-            position = db.debatorDAO().getDebatorSide(prefs.getString(getString(R.string.PrefKeyPlayerName),"ERROR!NONAME")!!)
-        }
-        runOnUiThread{
-            when(position){
+            val position = db.debatorDAO().getDebatorSide(prefs.getString(getString(R.string.PrefKeyPlayerName),"ERROR!NONAME")!!)
+            runOnUiThread{
+                when(position){
                     true -> final_vote_position_lbl.text = "You agree with the claim."
                     false -> final_vote_position_lbl.text = "You disagree with the claim"
                 }
+            }
         }
+
     }
 
 }

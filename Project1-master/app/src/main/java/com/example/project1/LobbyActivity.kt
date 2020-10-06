@@ -1,5 +1,7 @@
 package com.example.project1
 
+//  Contributors: Kaur, John, Shanka
+
 /*  this screen is the LOBBY of a game session. HOSTS stay here after they created a game, and DEBATORS will
     join from their end. The HOST/JUDGE may start the game proper at any time.
 

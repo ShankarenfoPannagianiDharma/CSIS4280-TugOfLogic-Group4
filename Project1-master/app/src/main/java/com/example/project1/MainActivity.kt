@@ -1,5 +1,7 @@
 package com.example.project1
 
+//  Contributors: Kaur, John, Shanka, Neha
+
 /*  This activity serves as the main menu screen. Users can select to create/host a game as a JUDGE (instructor)
     or to join a game as a DEBATOR (student).
  */

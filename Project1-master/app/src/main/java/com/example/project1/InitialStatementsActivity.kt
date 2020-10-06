@@ -1,5 +1,7 @@
 package com.example.project1
 
+//  Contributors: Shanka
+
 /*  Initial statements activity is the place after picking sides, DEBATORS must make statements regarding
     their position on the main claim. (Everyone can make one,) (statements can be deleted after voting,)
     after everyone is satisfied, they may proceed to the hub.

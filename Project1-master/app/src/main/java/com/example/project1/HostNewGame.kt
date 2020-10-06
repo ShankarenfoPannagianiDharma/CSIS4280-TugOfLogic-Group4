@@ -1,5 +1,7 @@
 package com.example.project1
 
+//  Contributors: Kaur, John, Shanka
+
 /*  This screen allows the HOST to define the MAIN CLAIM that players will have to debate on.
     The JUDGE will have to state their username. These two items will be saved in the sharedPreferences,
     since they will be referenced throughout the whole game session. Once both items are entered and legal,

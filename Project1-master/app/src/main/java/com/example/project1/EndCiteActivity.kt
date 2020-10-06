@@ -1,5 +1,7 @@
 package com.example.project1
 
+//  Contributors: Shanka
+
 /*  This is the final activity of the game. the game result is calculated previously, and can be displayed here.
     DEBATORS that switched must now cite their reason why- through a dialogbox.
     ending the button returns to mainactivity.
@@ -46,6 +48,8 @@ class EndCiteActivity : AppCompatActivity() {
                 if(db.debatorDAO().isDebatorSwitched(debatorName)){
                     //if switched, dialogbox
                     val inputDialog  = AlertDialog.Builder(this@EndCiteActivity)
+                    inputDialog.setTitle("Citation:")
+                    inputDialog.setMessage("Why did you change your mind?")
                     val input = EditText(this@EndCiteActivity)
                     val lp = LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.MATCH_PARENT)
                     input.layoutParams = lp
@@ -69,18 +73,20 @@ class EndCiteActivity : AppCompatActivity() {
                             }
                         }
                     })//end inputdialog ok
-                    inputDialog.show()
+                    runOnUiThread{
+                        inputDialog.show()
+                    }
                 }//end if user has switched
             }
         }//end if user is debator
 
         //quit button->main activity
         end_cite_end_btn.setOnClickListener {
-            //clear out databases
+            /*/TODO DID NOT WORK! clear out databases
             GlobalScope.launch {
                 val db = DatabaseClasses.AppDatabase.getDB(baseContext)
                 db.clearAllTables()
-            }
+            }*/
 
             //clear out preferences
             val prefs = getSharedPreferences(getString(R.string.PrefName), Context.MODE_PRIVATE)

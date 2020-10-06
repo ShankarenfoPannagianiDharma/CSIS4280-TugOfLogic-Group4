@@ -1,5 +1,7 @@
 package com.example.project1
 
+//  Contributors: Kaur, John, Shanka
+
 import android.content.Context
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity

@@ -1,5 +1,7 @@
 package com.example.project1
 
+//  Contributors: Shanka, John, Kaur
+
 /*  This activity allows the DEBATORS to pick their initial side in the session.
     after a choice is made, they proceed to the claims activity to make statements on their end.
     THE CHOICE IS SAVED INTO THE DATABASE, so in the next activity, refer to dbase for which elements to display.

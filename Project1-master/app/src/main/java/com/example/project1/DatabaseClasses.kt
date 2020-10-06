@@ -1,13 +1,16 @@
 package com.example.project1
 
+//  Contributors: Neha, Shanka, John, Kaur
+
+/*  This file contains all the classes that is relevant to local SQLlite database with Room.
+ */
+
 import android.content.Context
 import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.room.*
 import kotlinx.coroutines.flow.Flow
 
-/*  This file contains all the classes that is relevant to local SQLlite database with Room.
- */
 class DatabaseClasses {
 
     //ENTITY CLASSES
@@ -152,6 +155,7 @@ class DatabaseClasses {
 
                 synchronized(this) {
                     val instance = Room.databaseBuilder(context.applicationContext, AppDatabase::class.java, "baseDB").build()
+
                     //populate with hardcoded data
                     //determines if data is empty ( and thus may have data entered to it )
                     if(instance.debatorDAO().counts() == 0 && instance.statementDAO().counts() == 0 && instance.sessionDAO().counts() == 0){

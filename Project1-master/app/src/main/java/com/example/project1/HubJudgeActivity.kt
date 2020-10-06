@@ -1,5 +1,7 @@
 package com.example.project1
 
+//  Contributors: Kaur, John, Shanka
+
 /*  This is the judge's perspective of the hub. Judge can personally force start a bout with button.
     TODO: possible judge only controls? sidebars? drawers? ideas...
  */

@@ -1,5 +1,7 @@
 package com.example.project1
 
+// Contributors: Shanka, John, Kaur
+
 /*  This is the bout round interface for DEBATORS.
     TODO: the chat with all users must enable discussion
     DEBATORS must be able to vote on the RiP in the bout: Yes or No.

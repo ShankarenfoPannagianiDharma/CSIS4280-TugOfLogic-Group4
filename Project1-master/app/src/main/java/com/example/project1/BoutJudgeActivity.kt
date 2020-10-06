@@ -1,5 +1,7 @@
 package com.example.project1
 
+//  Contributors: Shanka
+
 /*  This is the judge's perspective of bouts. They can TODO: Chat with debators.
     And end the bout prematurely.
  */
