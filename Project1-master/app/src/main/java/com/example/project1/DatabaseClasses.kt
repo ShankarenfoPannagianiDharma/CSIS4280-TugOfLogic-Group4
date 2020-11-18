@@ -7,7 +7,6 @@ package com.example.project1
 
 import android.content.Context
 import android.util.Log
-import androidx.lifecycle.LiveData
 import androidx.room.*
 import kotlinx.coroutines.flow.Flow
 
@@ -193,6 +192,5 @@ class DatabaseClasses {
         }
 
     }
-
 
 }
