@@ -17,7 +17,7 @@ class DatabaseClasses {
     data class Debator(
         @PrimaryKey(autoGenerate = true) val id : Int = 0,
         @ColumnInfo(name="username") val username : String,
-        @ColumnInfo(name="position") val position : Boolean,
+        @ColumnInfo(name="position") val position : Boolean,        //true = agree, false = disagree
         @ColumnInfo(name="switched") val switched : Boolean
     )
     @Entity //a statement: the text, position re. MC, status in bout
@@ -36,6 +36,13 @@ class DatabaseClasses {
     data class Cite(
         @PrimaryKey(autoGenerate = true) val id : Int = 0,
         @ColumnInfo(name="content") val content : String
+    )
+    @Entity
+    data class Chat(
+        @PrimaryKey(autoGenerate = true) val id : Int = 0,
+        @ColumnInfo(name="message") val message : String,
+        @ColumnInfo(name="sender") val sender: String,
+        @ColumnInfo(name="position") val position : Int     //sender faction: 1 = agree, 0 = disagree, 2 = admin
     )
 
     //DAOs
@@ -131,14 +138,26 @@ class DatabaseClasses {
         @Query("SELECT content FROM Cite")
         fun getAllCites() : Flow<List<String>>
     }
+    @Dao
+    interface ChatDAO{
+        @Query("SELECT * FROM Chat")
+        fun getAllChats() : Flow<List<Chat>>
+
+        @Insert
+        fun insertChat(vararg chat: Chat)
+
+        @Query("DELETE FROM Chat")
+        fun clearChats()
+    }
 
     //Database
-    @Database(entities = arrayOf(Debator::class,Statement::class,Session::class,Cite::class), version = 1, exportSchema = false)
+    @Database(entities = arrayOf(Debator::class,Statement::class,Session::class,Cite::class,Chat::class), version = 1, exportSchema = false)
     abstract class AppDatabase : RoomDatabase() {
         abstract fun debatorDAO(): debatorDAO
         abstract fun statementDAO(): StatementDAO
         abstract fun sessionDAO(): SessionDAO
         abstract fun citeDAO(): CiteDAO
+        abstract fun chatDAO(): ChatDAO
 
         companion object {
             @Volatile   //static singleton value for database.
