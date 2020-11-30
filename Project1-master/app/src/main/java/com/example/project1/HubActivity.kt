@@ -16,55 +16,127 @@ import android.os.Bundle
 import android.os.CountDownTimer
 import android.util.Log
 import android.widget.ArrayAdapter
+import com.squareup.moshi.JsonAdapter
+import com.squareup.moshi.Moshi
 import kotlinx.android.synthetic.main.activity_hub.*
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.launch
+import java.io.BufferedReader
+import java.io.InputStreamReader
+import java.net.HttpURLConnection
+import java.net.URL
 
 class HubActivity : AppCompatActivity() {
 
     var arrayAdapterTRUE: ArrayAdapter<*>? = null
     var arrayAdapterFALSE: ArrayAdapter<*>? = null
     var boutsNum = 0;
-    var statements: List<String>? = null
+    var statements: MutableList<String> = ArrayList()
+    var statementsFor: MutableList<String> = ArrayList()
+    var statementsAgainst: MutableList<String> = ArrayList()
+    var statementsObj: List<StatementObj>? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_hub)
 
-        GlobalScope.launch {
-            //connect to database
-            val db = DatabaseClasses.AppDatabase.getDB(baseContext)
-            //fill statements from database
-            db.statementDAO().getSideStatements(true).collect {
-                arrayAdapterTRUE =
-                    ArrayAdapter(baseContext, android.R.layout.simple_list_item_1, it)
-                runOnUiThread {
-                    hub_statements_for_list.adapter = arrayAdapterTRUE
-                }
-            }
-        }
-        GlobalScope.launch {
-            val db = DatabaseClasses.AppDatabase.getDB(baseContext)
-            db.statementDAO().getSideStatements(false).collect {
-                arrayAdapterFALSE =
-                    ArrayAdapter(baseContext, android.R.layout.simple_list_item_1, it)
-                runOnUiThread {
-                    hub_statements_against_list.adapter = arrayAdapterFALSE
-                }
-            }
-        }
+//        GlobalScope.launch {
+//            //connect to database
+//            val db = DatabaseClasses.AppDatabase.getDB(baseContext)
+//            //fill statements from database
+//            db.statementDAO().getSideStatements(true).collect {
+//                arrayAdapterTRUE =
+//                    ArrayAdapter(baseContext, android.R.layout.simple_list_item_1, it)
+//                runOnUiThread {
+//                    hub_statements_for_list.adapter = arrayAdapterTRUE
+//                }
+//            }
+//        }
+//        GlobalScope.launch {
+//            val db = DatabaseClasses.AppDatabase.getDB(baseContext)
+//            db.statementDAO().getSideStatements(false).collect {
+//                arrayAdapterFALSE =
+//                    ArrayAdapter(baseContext, android.R.layout.simple_list_item_1, it)
+//                runOnUiThread {
+//                    hub_statements_against_list.adapter = arrayAdapterFALSE
+//                }
+//            }
+//        }
 
         GlobalScope.launch {
             val db = DatabaseClasses.AppDatabase.getDB(baseContext)
-            //load all statements TODO: Make it FLOW/LIVE
-            statements = db.statementDAO().getAllStatements()
+
+            //get statements from AWS database
+            var statementString: String = ""
+            try{
+                //get url data from assets
+                val urlJSONString: String = applicationContext.assets.open("SiteData.json").bufferedReader().use { it.readText() }
+                //parse JSON with Moshi
+                val moshi : Moshi = Moshi.Builder().build()
+                val type = com.squareup.moshi.Types.newParameterizedType(DataUrl::class.java)
+                val moshiAdapter: JsonAdapter<DataUrl> = moshi.adapter(type)
+                val urlObject = moshiAdapter.fromJson(urlJSONString)!!
+
+                //set content-type application/json
+                val url = URL("http:/" + urlObject.server + ":" + urlObject.port + "/GetStatements")
+                Log.i("GetStatements", url.toString())
+                val conn = url.openConnection() as HttpURLConnection
+                conn.requestMethod = "GET"
+                conn.readTimeout = 15*1000
+                conn.connect() //<-- ACTUALLY CONNECT
+
+
+                // read the output from the server
+                val reader = BufferedReader(InputStreamReader(conn.inputStream))
+                statementString = reader.readLines().toString()
+                reader.close()
+
+                //take off extra brackets
+                statementString = statementString.replace("[[","[")
+                statementString = statementString.replace("]]","]")
+
+                Log.i("GetStatements", "Done:$statementString")
+            } catch (e : Exception){
+                e.printStackTrace()
+                Log.i("GetStatements","Failed.")
+            }
+
+            //convert raw statement string into object
+            val moshi : Moshi = Moshi.Builder().build()
+            val type = com.squareup.moshi.Types.newParameterizedType(List::class.java, StatementObj::class.java)
+            val moshiAdapter: JsonAdapter<List<StatementObj>> = moshi.adapter(type)
+            statementsObj = moshiAdapter.fromJson(statementString)!!
+
+            for (s in statementsObj!!){
+                statements.add(s.content)
+                if(s.position.compareTo("true") == 0){
+                    statementsFor.add(s.content)
+                }else{
+                    statementsAgainst.add(s.content)
+                }
+
+            }
             Log.i("HUBACTIVITY","STATEMENTS LOADED: "+statements!!.size)
 
             //determine which side the player is on
             val prefs = getSharedPreferences(getString(R.string.PrefName), Context.MODE_PRIVATE)
             val position = db.debatorDAO().getDebatorSide(prefs.getString(getString(R.string.PrefKeyPlayerName), "ERROR!NONAME")!!)
             runOnUiThread { hub_player_status.text = if (position) { "You agree." } else { "You disagree." } }
+
+            arrayAdapterTRUE =
+                statementsFor.let {
+                    ArrayAdapter(baseContext, android.R.layout.simple_list_item_1, it) }
+            runOnUiThread {
+                hub_statements_for_list.adapter = arrayAdapterTRUE
+            }
+
+            arrayAdapterFALSE =
+                statementsAgainst.let {
+                    ArrayAdapter(baseContext, android.R.layout.simple_list_item_1, it) }
+            runOnUiThread {
+                hub_statements_against_list.adapter = arrayAdapterFALSE
+            }
         }
 
         //put main claim at the top
